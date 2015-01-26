@@ -684,4 +684,12 @@ public class VideoView extends SurfaceView implements
     public boolean canSeekForward() {
         return mCanSeekForward;
     }
+    
+    public void setMediaCodecEnabled(boolean enabled){
+        DebugLog.d(TAG, "setMediaCodecEnabled:" + enabled);
+        if (null != mMediaPlayer && mMediaPlayer instanceof IjkMediaPlayer) {
+            DebugLog.d(TAG, "MediaCodecEnabled");
+            ((IjkMediaPlayer)mMediaPlayer).setMediaCodecEnabled(enabled);
+        }
+    }
 }
